@@ -942,7 +942,7 @@ document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 (function(){
   // Replace 'YOUR_PUBLIC_KEY' with your EmailJS public key
   // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' below
-  emailjs.init('YOUR_PUBLIC_KEY');
+  emailjs.init('5cL_HpM2GV_NT08bH');
 })();
 
 async function handleSubmit(e){
@@ -975,8 +975,8 @@ async function handleSubmit(e){
 
   try {
     await emailjs.sendForm(
-      'YOUR_SERVICE_ID',   // <-- replace with your EmailJS service ID
-      'YOUR_TEMPLATE_ID',  // <-- replace with your EmailJS template ID
+      'service_vy4ikaq',   // <-- replace with your EmailJS service ID
+      'template_m9re3lx',  // <-- replace with your EmailJS template ID
       form
     );
     notice.className = 'form-notice success';
