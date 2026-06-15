@@ -318,17 +318,23 @@
           </a>
         </div>
         <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.7;">We typically respond within a few hours. For urgent inquiries Discord is fastest.</p>
-      </div>
+     </div>
       <div class="reveal">
         <div id="form-notice" class="form-notice"></div>
-        <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)" novalidate>
+        <!-- style toegevoegd om de banner te positioneren en interactie te blokkeren -->
+        <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)" novalidate style="position: relative; overflow: hidden; pointer-events: none; opacity: 0.6;">
+          
+          <!-- De schuine rode banner direct bovenaan in het formulier -->
+          <div style="position: absolute; top: 15px; left: -40px; width: 160px; background: red; color: white; text-align: center; font-weight: bold; transform: rotate(-45deg); z-index: 999; font-size: 12px; padding: 4px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.2); uppercase;">OUT OF SERVICE</div>
+
+          <!-- Jouw originele velden, nu met 'disabled' -->
           <div class="form-row">
-            <div class="field"><label for="cf-name">Name</label><input id="cf-name" name="from_name" type="text" placeholder="Your name" required></div>
-            <div class="field"><label for="cf-email">Email</label><input id="cf-email" name="from_email" type="email" placeholder="your@email.com" required></div>
+            <div class="field"><label for="cf-name">Name</label><input id="cf-name" name="from_name" type="text" placeholder="Your name" required disabled></div>
+            <div class="field"><label for="cf-email">Email</label><input id="cf-email" name="from_email" type="email" placeholder="your@email.com" required disabled></div>
           </div>
-          <div class="field"><label for="cf-subject">Subject</label><input id="cf-subject" name="subject" type="text" placeholder="What is this regarding?" required></div>
-          <div class="field"><label for="cf-msg">Message</label><textarea id="cf-msg" name="message" placeholder="Tell us more..." required></textarea></div>
-          <button type="submit" class="btn-submit" id="submitBtn"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+          <div class="field"><label for="cf-subject">Subject</label><input id="cf-subject" name="subject" type="text" placeholder="What is this regarding?" required disabled></div>
+          <div class="field"><label for="cf-msg">Message</label><textarea id="cf-msg" name="message" placeholder="Tell us more..." required disabled></textarea></div>
+          <button type="submit" class="btn-submit" id="submitBtn" disabled><i class="fa-solid fa-paper-plane"></i> Send Message</button>
         </form>
       </div>
     </div>
